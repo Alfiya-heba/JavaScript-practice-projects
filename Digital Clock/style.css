@@ -1,19 +1,55 @@
-body{
-    background-color: #212121;
-    color: #fff;
-}
-.center{
-    display:flex;
-    height:100vh;
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
     justify-content: center;
-    align-items:center;
-    flex-direction: column;
-
-}
-#clock{
-    background-color:orange;
-    padding:20px 50px;
-    margin-top:10px;
-    border-radius:10px;
-    font-size:40px;
-}
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+  }
+  
+  /* Center container styling */
+  .center {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Banner styling */
+  #banner {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffeb3b;
+  }
+  
+  #banner span {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Clock styling */
+  #clock {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    #banner {
+      font-size: 1.2rem;
+    }
+  
+    #clock {
+      font-size: 2.5rem;
+    }
+  }
+  
