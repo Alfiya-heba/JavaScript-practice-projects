@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .card {
+            width: 350px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.4em;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .card a:hover {
+            background-color: #45a049;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+        .stats div {
+            text-align: center;
+        }
+        .stats div span {
+            display: block;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card-container"></div>
+
+    <script>
+        // Simulated JSON data
+        const userData = {
+            login: "Alfiya-heba",
+            id: 157894259,
+            avatar_url: "https://avatars.githubusercontent.com/u/157894259?v=4",
+            html_url: "https://github.com/Alfiya-heba",
+            location: "Karnataka",
+            bio: "Hi, I’m Alfiya Heba, a Computer Science student exploring new skills in coding and development.\r\nLet's connect!!",
+            public_repos: 7,
+            followers: 0,
+            following: 0,
+            created_at: "2024-01-27T13:21:24Z",
+        };
+
+        // Target the container
+        const cardContainer = document.getElementById('card-container');
+
+        // Create the card element
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        // Populate card content
+        card.innerHTML = `
+            <img src="${userData.avatar_url}" alt="Avatar" class="avatar">
+            <h3>${userData.login}</h3>
+            <p>${userData.bio}</p>
+            <p><strong>Location:</strong> ${userData.location || "Not Provided"}</p>
+            <div class="stats">
+                <div>
+                    <span>${userData.public_repos}</span>
+                    <p>Repositories</p>
+                </div>
+                <div>
+                    <span>${userData.followers}</span>
+                    <p>Followers</p>
+                </div>
+                <div>
+                    <span>${userData.following}</span>
+                    <p>Following</p>
+                </div>
+            </div>
+            <a href="${userData.html_url}" target="_blank">View GitHub Profile</a>
+        `;
+
+        // Append the card to the container
+        cardContainer.appendChild(card);
+    </script>
+</body>
+</html>
